@@ -1,8 +1,6 @@
 package gmail.testing.page.objects.message.body;
 
 import gmail.testing.page.objects.message.BodyType;
-import gmail.testing.page.objects.message.InformalMessage;
-import org.apache.commons.lang3.text.StrBuilder;
 
 /**
  * Created by HP on 2/1/2018.
@@ -10,7 +8,7 @@ import org.apache.commons.lang3.text.StrBuilder;
 public class InformalBody implements BodyType {
 
     public String setBody() {
-        StrBuilder builder = new StrBuilder();
+        StringBuilder builder = new StringBuilder();
         builder.append("How ur doing?," + "\n");
         builder.append("\n");
         builder.append("Wanna hangout tmr? What u say" + "\n");

@@ -6,7 +6,6 @@ import gmail.testing.page.objects.utills.GmailTestUtills;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.TestException;
 
 import java.util.Collections;

@@ -5,6 +5,7 @@ import gmail.testing.page.objects.LoginPage;
 import gmail.testing.page.objects.driver.DriverDecorator;
 import gmail.testing.page.objects.driver.WebDriverSingleton;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
@@ -14,18 +15,15 @@ import java.util.concurrent.TimeUnit;
  */
 public class BaseGmailTest {
 
-    protected AccountPage accountPage;
     protected LoginPage loginPage;
     protected final String MAIN_URL = "https://gmail.com/";
-    protected WebDriver driver;
+    protected ChromeDriver driver;
 
 
     @BeforeClass()
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
-        //decorated driver
-        driver= WebDriverSingleton.getWebDriver();
-        driver = new DriverDecorator(driver);
+        driver = (ChromeDriver) WebDriverSingleton.getWebDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(MAIN_URL);
