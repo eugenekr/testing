@@ -43,7 +43,7 @@ public class DriverDecorator implements WebDriver {
         WebElement element=driver.findElement(by);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].style.backgroundColor = '" + "green" + "'", element);
-        Screenshot.takeScreenshot(driver, "element" + "_" + "highlighted"+value);
+        Screenshot.takeScreenshot(driver, "element" + "_" + "highlighted_"+value);
         return driver.findElement(by);
     }
 

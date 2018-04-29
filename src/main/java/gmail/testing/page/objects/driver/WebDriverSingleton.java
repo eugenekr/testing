@@ -7,18 +7,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * Created by HP on 2/2/2018.
  */
 public class WebDriverSingleton {
-    private static WebDriver driver;
 
+    private static volatile ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<WebDriver>();
 
     private WebDriverSingleton() {
     }
 
     public static WebDriver getWebDriver() {
-        if (driver==null){
-            System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
-            driver = new ChromeDriver();
 
+        if (threadLocalDriver.get() == null) {
+            synchronized (WebDriverSingleton.class) {
+                if (threadLocalDriver.get() == null) {
+                    threadLocalDriver.set(new ChromeDriver());
+                    System.out.println("Thread started " + threadLocalDriver.get().hashCode());
+                }
+            }
         }
-        return driver;
+        return threadLocalDriver.get();
     }
 }

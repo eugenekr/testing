@@ -1,7 +1,6 @@
 package gmail.testing.page.objects.message.body;
 
 import gmail.testing.page.objects.message.BodyType;
-import org.apache.commons.lang3.text.StrBuilder;
 
 /**
  * Created by HP on 2/1/2018.
@@ -9,7 +8,7 @@ import org.apache.commons.lang3.text.StrBuilder;
 public class FormalBody implements BodyType {
 
     public String setBody() {
-        StrBuilder builder = new StrBuilder();
+        StringBuilder builder = new StringBuilder();
         builder.append("Dear receiver," + "\n");
         builder.append("\n");
         builder.append("You've received formal email" + "\n");
