@@ -1,11 +1,11 @@
 <suite name="TEST_SUITE" parallel="methods" thread-count="2">
     <test name="LoginTest">
         <classes>
-            <!--<class name="gmail.testing.page.objects.test.LoginTest">-->
-                <!--<methods>-->
-                    <!--<include name="login" />-->
-                <!--</methods>-->
-            <!--</class>-->
+            <class name="gmail.testing.page.objects.test.LoginTest">
+                <methods>
+                    <include name="login" />
+                </methods>
+            </class>
 
             <class name="gmail.testing.page.objects.test.EmailSendTest">
                 <methods>
