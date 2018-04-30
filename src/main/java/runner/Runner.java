@@ -1,5 +1,6 @@
 package runner;
 
+import org.testng.ITestNGListener;
 import org.testng.TestListenerAdapter;
 import org.testng.TestNG;
 import org.testng.xml.XmlSuite;
@@ -12,7 +13,8 @@ import java.util.ArrayList;
 public class Runner {
     public static void main(String[] args) {
         TestNG testNG = new TestNG();
-        testNG.addListener(new TestListenerAdapter());
+        ITestNGListener iTestNGListener = new TestListenerAdapter();
+        testNG.addListener(iTestNGListener);
 //        testNG.addListener(new CustomListener());
 
         final XmlSuite xmlSuite = new XmlSuite();
