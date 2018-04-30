@@ -3,6 +3,8 @@ package gmail.testing.page.objects.driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import javax.xml.ws.handler.LogicalHandler;
+
 /**
  * Created by HP on 2/2/2018.
  */
@@ -19,7 +21,6 @@ public class WebDriverSingleton {
             synchronized (WebDriverSingleton.class) {
                 if (threadLocalDriver.get() == null) {
                     threadLocalDriver.set(new ChromeDriver());
-                    System.out.println("Thread started " + threadLocalDriver.get().hashCode());
                 }
             }
         }

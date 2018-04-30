@@ -68,6 +68,7 @@ public class AccountPage extends BaseGmailPage{
     }
 
     private void openNewMessageDialog() {
+        logger.info("Open new message dialog");
         composeButton.click();
         GmailTestUtills.waitForElementToBeVisible(driver, toInput);
     }

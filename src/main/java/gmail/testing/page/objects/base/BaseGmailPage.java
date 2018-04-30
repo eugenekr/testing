@@ -1,5 +1,6 @@
 package gmail.testing.page.objects.base;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class BaseGmailPage extends Assert{
 
     protected WebDriver driver;
+    protected Logger logger = Logger.getLogger(BaseGmailPage.class);
 
     public BaseGmailPage(WebDriver driver) {
         this.driver = driver;
