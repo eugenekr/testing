@@ -1,4 +1,4 @@
-<suite name="TEST_SUITE" parallel="methods" thread-count="2">
+<suite name="TEST_SUITE" parallel="classes" thread-count="3">
     <test name="LoginTest">
         <classes>
             <class name="gmail.testing.page.objects.test.LoginTest">
@@ -12,6 +12,9 @@
                     <include name="isEmailSent" />
                 </methods>
             </class>
+
+            <class name="gmail.testing.page.objects.test.ReceiveEmailTest"/>
+
         </classes>
     </test>
 </suite>

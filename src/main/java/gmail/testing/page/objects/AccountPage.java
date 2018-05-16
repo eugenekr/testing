@@ -59,6 +59,11 @@ public class AccountPage extends BaseGmailPage{
         return getUserIcon().isDisplayed();
     }
 
+    public UserProfilePopUp openUserProfilePopUp() {
+        userIcon.click();
+        return new UserProfilePopUp(driver);
+    }
+
     public void sendEmail(EmailMessage emailMessage) {
         openNewMessageDialog();
         enterRecipientAddress(emailMessage.getReceiverAddress());

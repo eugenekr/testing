@@ -3,8 +3,6 @@ package gmail.testing.page.objects.driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import javax.xml.ws.handler.LogicalHandler;
-
 /**
  * Created by HP on 2/2/2018.
  */

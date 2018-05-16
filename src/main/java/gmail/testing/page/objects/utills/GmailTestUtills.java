@@ -27,7 +27,7 @@ public class GmailTestUtills {
                 .ignoring(WebDriverException.class)
                 .ignoring(NoSuchElementException.class);
 
-        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static void waitForElementToBeNotVisible(WebDriver webdriver, List<WebElement> elementList) {
