@@ -1,16 +1,12 @@
 package gmail.testing.page.objects.test;
 
 import gmail.testing.page.objects.AccountPage;
-import gmail.testing.page.objects.LoginPage;
 import gmail.testing.page.objects.base.BaseGmailTest;
 import gmail.testing.page.objects.enums.Users;
 import gmail.testing.page.objects.message.EmailMessage;
-import gmail.testing.page.objects.message.FormalMessage;
 import gmail.testing.page.objects.message.SpamMessage;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
