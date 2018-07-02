@@ -1,11 +1,12 @@
 package gmail.testing.page.objects.message.body;
 
 import gmail.testing.page.objects.message.BodyType;
+import gmail.testing.page.objects.message.EmailMessage;
 
 /**
  * Created by HP on 2/1/2018.
  */
-public class FormalBody implements BodyType {
+public class FormalBody implements BodyType{
 
     public String setBody() {
         StringBuilder builder = new StringBuilder();
@@ -17,5 +18,4 @@ public class FormalBody implements BodyType {
         builder.append("GmailTest" + "\n");
         return builder.toString();
     }
-
 }
