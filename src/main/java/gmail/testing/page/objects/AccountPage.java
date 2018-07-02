@@ -1,6 +1,7 @@
 package gmail.testing.page.objects;
 
 import gmail.testing.page.objects.base.BaseGmailPage;
+import gmail.testing.page.objects.enums.Users;
 import gmail.testing.page.objects.message.EmailMessage;
 import gmail.testing.page.objects.utills.GmailTestUtills;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.TestException;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by HP on 1/31/2018.
@@ -17,6 +21,15 @@ public class AccountPage extends BaseGmailPage{
 
     @FindBy(xpath = "//a[contains (@title, 'Google Account: ')]")
     private WebElement userIcon;
+
+    @FindBy(xpath = "//span[@email]")
+    private List<WebElement> emailAddressList;
+
+    @FindBy(xpath = "//span[@class = 'bog']/following-sibling::span")
+    private List<WebElement> messageContentList;
+
+    @FindBy(xpath = "//span[@class = 'bog']")
+    private List<WebElement> subjectContentList;
 
     @FindBy(xpath = "//div[@gh= 'cm']")
     private WebElement composeButton;
@@ -104,5 +117,15 @@ public class AccountPage extends BaseGmailPage{
         } else {
             throw new TestException("Email address cannot be null");
         }
+    }
+
+    public boolean getIncommingEmailList() {
+        return emailAddressList.stream().map(e -> e.getAttribute("email"))
+                .collect(Collectors.toList())
+                .contains(Users.MAIN_USER.getEmailAddress().toLowerCase())
+                &&
+                messageContentList.stream().map(e -> e.getAttribute("class"))
+                        .collect(Collectors.toList())
+                        .contains(Users.MAIN_USER.getEmailAddress().toLowerCase());
     }
 }

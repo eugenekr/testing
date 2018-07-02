@@ -9,7 +9,6 @@ public abstract class EmailMessage {
     protected BodyType bodyType;
     protected SubjectType subjectType;
 
-
     public EmailMessage() {
     }
 

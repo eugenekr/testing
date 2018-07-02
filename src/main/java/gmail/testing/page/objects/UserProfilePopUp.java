@@ -2,6 +2,7 @@ package gmail.testing.page.objects;
 
 import gmail.testing.page.objects.base.BaseGmailPage;
 import gmail.testing.page.objects.utills.GmailTestUtills;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,8 +20,10 @@ public class UserProfilePopUp extends BaseGmailPage {
 
     public LoginPage signOut() {
         signOutButton.click();
-        if (driver.switchTo().alert() != null) {
+        try {
             driver.switchTo().alert().accept();
+        } catch (NoAlertPresentException e) {
+            System.out.println("No alert present. Exception: " + e.getMessage());
         }
         GmailTestUtills.waitForPageLoadIsComplete();
         return new LoginPage(driver);

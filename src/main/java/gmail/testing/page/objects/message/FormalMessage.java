@@ -12,5 +12,4 @@ public class FormalMessage extends EmailMessage {
         bodyType = new FormalBody();
         subjectType = new FormalSubject();
     }
-
 }
